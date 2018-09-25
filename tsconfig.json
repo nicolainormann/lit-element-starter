@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "strict": true,
+        "experimentalDecorators": true,
+        "target": "es6",
+        "moduleResolution": "node",
+        "lib": [
+            "dom",
+            "es7"
+        ]
+    }
+}
