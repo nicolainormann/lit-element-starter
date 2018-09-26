@@ -1,10 +1,10 @@
 const path = require("path");
 const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode: "development",
-    watch: true,
     devtool: "source-map",
     entry: "./src/elements/index.ts",
     output: {
@@ -14,9 +14,17 @@ module.exports = {
     resolve: {
         extensions: [".ts", ".js"]
     },
+    devServer: {
+        contentBase: path.join(__dirname, "dist/"),
+        historyApiFallback: true
+    },
     plugins: [
         new MiniCssExtractPlugin({
             filename: "css/main.css"
+        }),
+        new HtmlWebpackPlugin({
+            template: "index.html",
+            path: path.join(__dirname, "dist/")
         })
     ],
     module: {

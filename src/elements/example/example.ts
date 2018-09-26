@@ -7,9 +7,16 @@ class ExampleElement extends LitElement {
 
     render() {
         return html`
-            <link href="dist/css/main.css" rel="stylesheet" />
+            <style>
+                .example {
+                    font-size: 120px;
+                    background-color: #000;
+                    color: #fff;
+                    padding: 30px;
+                }
+            </style>
             <div class="example">
-                Example
+                Lit Element
             </div>
         `;
     }
