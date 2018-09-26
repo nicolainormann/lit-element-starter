@@ -2,6 +2,7 @@ const path = require("path");
 const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = [{
     mode: "production",
@@ -20,7 +21,10 @@ module.exports = [{
         new CopyWebpackPlugin([{
             from: "./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js",
             to: "js/3rdparty"
-        }])
+        }]),
+        new HtmlWebpackPlugin({
+            template: "src/index.html",
+        })
     ],
     module: {
         rules: [{
@@ -53,7 +57,7 @@ module.exports = [{
     }
 }, {
     mode: "production",
-    entry: ["./dist/js/main.js"],
+    entry: "./dist/js/main.js",
     output: {
         path: path.join(__dirname, "dist/"),
         filename: "js/main.es5.js"

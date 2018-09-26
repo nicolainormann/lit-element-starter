@@ -23,8 +23,7 @@ module.exports = {
             filename: "css/main.css"
         }),
         new HtmlWebpackPlugin({
-            template: "index.html",
-            path: path.join(__dirname, "dist/")
+            template: "src/index.html",
         })
     ],
     module: {
