@@ -3,10 +3,11 @@ const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackIncludeAssetsPlugin = require("html-webpack-include-assets-plugin");
 
-module.exports = [{
+module.exports = {
     mode: "production",
-    entry: "./src/elements/index.ts",
+    entry: "./src/index.ts",
     output: {
         path: path.join(__dirname, "dist/"),
         filename: "js/main.js"
@@ -19,11 +20,20 @@ module.exports = [{
             filename: "css/main.css"
         }),
         new CopyWebpackPlugin([{
-            from: "./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js",
-            to: "js/3rdparty"
-        }]),
+                from: "./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js",
+                to: "js/3rdparty"
+            },
+            {
+                from: "./node_modules/@webcomponents/webcomponentsjs/bundles",
+                to: "js/3rdparty/bundles"
+            }
+        ]),
         new HtmlWebpackPlugin({
             template: "src/index.html",
+        }),
+        new HtmlWebpackIncludeAssetsPlugin({
+            assets: ["js/3rdparty/webcomponents-loader.js"],
+            append: false
         })
     ],
     module: {
@@ -55,29 +65,4 @@ module.exports = [{
             }
         ]
     }
-}, {
-    mode: "production",
-    entry: "./dist/js/main.js",
-    output: {
-        path: path.join(__dirname, "dist/"),
-        filename: "js/main.es5.js"
-    },
-    plugins: [
-        new CopyWebpackPlugin([{
-            from: "./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
-            to: "js/3rdparty"
-        }, {
-            from: "./node_modules/@babel/polyfill/dist/polyfill.js",
-            to: "js/3rdparty"
-        }])
-    ],
-    module: {
-        rules: [{
-            test: /\.js$/,
-            loader: "babel-loader",
-            options: {
-                presets: ['@babel/preset-env']
-            }
-        }]
-    }
-}];
+};
