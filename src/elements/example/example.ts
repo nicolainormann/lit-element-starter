@@ -1,6 +1,7 @@
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html, customElement } from "@polymer/lit-element";
 
-class ExampleElement extends LitElement {
+@customElement("app-example")
+export class ExampleElement extends LitElement {
     constructor() {
         super();
     }
@@ -21,5 +22,3 @@ class ExampleElement extends LitElement {
         `;
     }
 }
-
-customElements.define("app-example", ExampleElement);
