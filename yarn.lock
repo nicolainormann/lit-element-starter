@@ -591,13 +591,6 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@polymer/lit-element@^0.6.0":
-  version "0.6.5"
-  resolved "https://registry.yarnpkg.com/@polymer/lit-element/-/lit-element-0.6.5.tgz#c614b9638a0809883ba52bf43fca5b6ed51b7aa8"
-  integrity sha512-KVjuU/5Ugp6PFob6YEe1/B4GCKjqhEy9Tj954shL6d3DohT2sNAmbX9QfbXvcZ8RhbVELK6dzbN3i2BRA3mOKg==
-  dependencies:
-    lit-html "^1.0.0-rc.1"
-
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.7.11.tgz#b988582cafbb2b095e8b556526f30c90d057cace"
@@ -3515,7 +3508,14 @@ lightercollective@^0.1.0:
   resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.1.0.tgz#70df102c530dcb8d0ccabfe6175a8d00d5f61300"
   integrity sha512-J9tg5uraYoQKaWbmrzDDexbG6hHnMcWS1qLYgJSWE+mpA3U5OCSeMUhb+K55otgZJ34oFdR0ECvdIb3xuO5JOQ==
 
-lit-html@^1.0.0-rc.1:
+lit-element@^2.0.0-rc.2:
+  version "2.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-2.0.0-rc.2.tgz#5975c3b282ce47937de861b48456036df71f422b"
+  integrity sha512-yP6mX23n8WUYXpS2RJUL87DSZYQY327YrnqFiSyPe9aSzjgJ5Jy3In3itzjeiFOT8Od4VKLM7u6bLG9tGFO1pw==
+  dependencies:
+    lit-html "^1.0.0-rc.2"
+
+lit-html@^1.0.0-rc.2:
   version "1.0.0-rc.2"
   resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.0.0-rc.2.tgz#b9c904520fe005d349aa737a86d83645d97d5a89"
   integrity sha512-4bq34lhVmwWly1zBXicOBJLOwaWfjOVbchEEmFnZLuztxjh5wRd2WqV0URX8Q47MQ7PaIjn/eXyTRKsYhSAeRw==

@@ -29,8 +29,8 @@
         "webpack-dev-server": "^3.1.9"
     },
     "dependencies": {
-        "@polymer/lit-element": "^0.6.0",
-        "@webcomponents/webcomponentsjs": "^2.1.1"
+        "@webcomponents/webcomponentsjs": "^2.1.1",
+        "lit-element": "^2.0.0-rc.2"
     },
     "browserslist": [
         "last 2 version",

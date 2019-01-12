@@ -1,4 +1,4 @@
-import { LitElement, html, customElement } from "@polymer/lit-element";
+import { LitElement, html, customElement } from "lit-element";
 
 @customElement("app-example")
 export class ExampleElement extends LitElement {
