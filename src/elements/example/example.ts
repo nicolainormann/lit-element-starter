@@ -1,21 +1,22 @@
-import { LitElement, html, customElement } from "lit-element";
+import { LitElement, html, customElement, css } from "lit-element";
 
 @customElement("app-example")
 export class ExampleElement extends LitElement {
+    static styles = css`
+        .example {
+            font-size: 120px;
+            background-color: #000;
+            color: #fff;
+            padding: 30px;
+        }
+    `;
+
     constructor() {
         super();
     }
 
     render() {
         return html`
-            <style>
-                .example {
-                    font-size: 120px;
-                    background-color: #000;
-                    color: #fff;
-                    padding: 30px;
-                }
-            </style>
             <div class="example">
                 Lit Element
             </div>
