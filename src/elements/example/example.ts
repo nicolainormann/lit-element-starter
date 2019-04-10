@@ -11,10 +11,6 @@ export class ExampleElement extends LitElement {
         }
     `;
 
-    constructor() {
-        super();
-    }
-
     render() {
         return html`
             <div class="example">
